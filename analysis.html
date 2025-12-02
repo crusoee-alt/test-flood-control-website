@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analysis / The Issue</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Additional CSS for animations */
+    .challenge-item {
+      margin-bottom: 10px;
+    }
+    .challenge-title {
+      cursor: pointer;
+      font-weight: bold;
+      color: #003366;
+      transition: color 0.3s ease;
+    }
+    .challenge-title:hover {
+      color: #005577;
+    }
+    .challenge-description {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+      padding: 0 20px;
+      background: #f9f9f9;
+      border-left: 3px solid #003366;
+      margin-top: 5px;
+    }
+    .challenge-description.open {
+      max-height: 200px; /* Adjust based on content length */
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <h1 class="site-title">Analytical Study on Flood Control Challenges</h1>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="analysis.html">Analysis</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="sources.html">Sources</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="analysis">
+    <h2>Flood Control Challenges</h2>
+    <ul>
+      <li class="challenge-item">
+        <div class="challenge-title" aria-expanded="false">Incomplete or Ghost Projects</div>
+        <div class="challenge-description">Many flood-control projects are officially marked as completed but were never constructed, leaving communities completely unprotected during heavy rains and typhoons.</div>
+      </li>
+      <li class="challenge-item">
+        <div class="challenge-title" aria-expanded="false">Substandard Construction</div>
+        <div class="challenge-description">Corruption often results in the use of low-quality materials, poor engineering practices, and shortcuts, causing infrastructure to fail when it is most needed.</div>
+      </li>
+      <li class="challenge-item">
+        <div class="challenge-title" aria-expanded="false">Wasted Public Funds</div>
+        <div class="challenge-description">Billions of pesos are lost to kickbacks, overpricing, and contracts awarded to politically connected contractors, reducing resources available for genuine disaster prevention.</div>
+      </li>
+      <li class="challenge-item">
+        <div class="challenge-title" aria-expanded="false">Delayed Project Completion</div>
+        <div class="challenge-description">Bribery, favoritism, and mismanagement slow down construction timelines, leaving high-risk areas exposed and communities vulnerable during flooding events.</div>
+      </li>
+      <li class="challenge-item">
+        <div class="challenge-title" aria-expanded="false">Vulnerable Communities</div>
+        <div class="challenge-description">Low-lying and poor neighborhoods suffer disproportionately, experiencing repeated flooding, displacement, property damage, and loss of livelihood.</div>
+      </li>
+      <li class="challenge-item">
+        <div class="challenge-title" aria-expanded="false">Environmental Degradation</div>
+        <div class="challenge-description">Poorly executed flood-control projects worsen erosion, river siltation, and waterlogging, which intensify flooding and create long-term ecological damage.</div>
+      </li>
+      <li class="challenge-item">
+        <div class="challenge-title" aria-expanded="false">Economic Disruption</div>
+        <div class="challenge-description">Failures in flood-control infrastructure disrupt agriculture, transportation, businesses, and public services, creating both immediate losses and long-term economic setbacks.</div>
+      </li>
+      <li class="challenge-item">
+        <div class="challenge-title" aria-expanded="false">Reduced Disaster Preparedness</div>
+        <div class="challenge-description">Corruption diverts funds from essential systems such as early warning, emergency response, and community resilience programs, leaving populations less prepared for floods.</div>
+      </li>
+      <li class="challenge-item">
+        <div class="challenge-title" aria-expanded="false">Loss of Public Trust</div>
+        <div class="challenge-description">Recurring scandals and unpunished corruption weaken citizens’ confidence in government institutions and reduce public support for disaster-management initiatives.</div>
+      </li>
+      <li class="challenge-item">
+        <div class="challenge-title" aria-expanded="false">Slow Justice for Those Involved</div>
+        <div class="challenge-description">Officials and contractors implicated in flood-control corruption often face prolonged investigations and delayed court cases, allowing corrupt practices to continue and undermining accountability.</div>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>~krusow was here.</p>
+  </div>
+</footer>
+
+<script>
+  // JavaScript for accordion functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const titles = document.querySelectorAll('.challenge-title');
+    
+    titles.forEach(title => {
+      title.addEventListener('click', function() {
+        const description = this.nextElementSibling;
+        const isOpen = description.classList.contains('open');
+        
+        // Close all other descriptions
+        document.querySelectorAll('.challenge-description').forEach(desc => {
+          desc.classList.remove('open');
+          desc.previousElementSibling.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Toggle the clicked one
+        if (!isOpen) {
+          description.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        } else {
+          this.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solutions / Recommendations</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Additional CSS for animations */
+    .solution-item {
+      margin-bottom: 10px;
+    }
+    .solution-title {
+      cursor: pointer;
+      font-weight: bold;
+      color: #003366;
+      transition: color 0.3s ease;
+    }
+    .solution-title:hover {
+      color: #005577;
+    }
+    .solution-description {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+      padding: 0 20px;
+      background: #f9f9f9;
+      border-left: 3px solid #003366;
+      margin-top: 5px;
+    }
+    .solution-description.open {
+      max-height: 200px; /* Adjust based on content length */
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <h1 class="site-title">Analytical Study on Flood Control Challenges</h1>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="analysis.html">Analysis</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="sources.html">Sources</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="solutions">
+    <h2>Proposed Solutions</h2>
+    <ul>
+      <li class="solution-item">
+        <div class="solution-title" aria-expanded="false">Strict Project Monitoring</div>
+        <div class="solution-description">Implement rigorous monitoring, regular inspections, and mandatory progress reporting to ensure projects are physically completed as documented.</div>
+      </li>
+      <li class="solution-item">
+        <div class="solution-title" aria-expanded="false">Enforce Quality Standards</div>
+        <div class="solution-description">Mandate strict compliance with engineering and safety standards, use independent quality auditors, and penalize contractors for shortcuts or poor workmanship.</div>
+      </li>
+      <li class="solution-item">
+        <div class="solution-title" aria-expanded="false">Transparent Procurement</div>
+        <div class="solution-description">Ensure open, competitive bidding and real-time disclosure of project budgets, contracts, and payments to prevent overpricing and misuse of funds.</div>
+      </li>
+      <li class="solution-item">
+        <div class="solution-title" aria-expanded="false">Efficient Project Management</div>
+        <div class="solution-description">Strengthen project scheduling, milestone tracking, and accountability mechanisms to prevent corruption-related delays and ensure timely delivery.</div>
+      </li>
+      <li class="solution-item">
+        <div class="solution-title" aria-expanded="false">Prioritize High-Risk Areas</div>
+        <div class="solution-description">Focus flood-control investments on the most flood-prone and underserved communities, ensuring equitable distribution of resources.</div>
+      </li>
+      <li class="solution-item">
+        <div class="solution-title" aria-expanded="false">Environmental Oversight</div>
+        <div class="solution-description">Include environmental assessments in every project and monitor compliance to prevent erosion, siltation, and other unintended consequences.</div>
+      </li>
+      <li class="solution-item">
+        <div class="solution-title" aria-expanded="false">Disaster-Resilient Infrastructure</div>
+        <div class="solution-description">Design flood-control projects to support economic continuity, protecting agriculture, transportation, and local businesses from flood impacts.</div>
+      </li>
+      <li class="solution-item">
+        <div class="solution-title" aria-expanded="false">Fund Early Warning Systems</div>
+        <div class="solution-description">Allocate funds for reliable early-warning systems, emergency response, and community-based disaster-preparedness programs.</div>
+      </li>
+      <li class="solution-item">
+        <div class="solution-title" aria-expanded="false">Strengthen Accountability</div>
+        <div class="solution-description">Increase transparency, involve civil society in monitoring, and publicly report irregularities and corrective actions to rebuild confidence.</div>
+      </li>
+      <li class="solution-item">
+        <div class="solution-title" aria-expanded="false">Accelerate Legal Processes</div>
+        <div class="solution-description">Streamline investigation and prosecution of corruption cases, enforce strict penalties, and ensure timely accountability for all involved parties.</div>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>~krusow was here.</p>
+  </div>
+</footer>
+
+<script>
+  // JavaScript for accordion functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const titles = document.querySelectorAll('.solution-title');
+    
+    titles.forEach(title => {
+      title.addEventListener('click', function() {
+        const description = this.nextElementSibling;
+        const isOpen = description.classList.contains('open');
+        
+        // Close all other descriptions
+        document.querySelectorAll('.solution-description').forEach(desc => {
+          desc.classList.remove('open');
+          desc.previousElementSibling.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Toggle the clicked one
+        if (!isOpen) {
+          description.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        } else {
+          this.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

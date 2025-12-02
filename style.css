@@ -1,0 +1,132 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #222;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Header */
+.site-header {
+  background: #003366;
+  color: white;
+  padding: 30px 0;  /* Your custom padding */
+}
+
+.site-title {
+  font-size: 35px;  /* Your custom font-size */
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Times New Roman', serif;
+  margin: 0;  /* Your custom margin */
+}
+
+.site-nav {
+  display: inline-block;
+  float: right;
+  margin-right: 80px;  /* Your custom margin-right */
+}
+
+.site-nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 100px;  /* Your custom margin-left */
+  font-weight: bold;
+  transition: all 0.3s ease;  /* Smooth transition for hover effects */
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+  background-color: rgba(0, 85, 119, 0.3);  /* Subtle blue background on hover */
+  color: #cceeff;  /* Lighter blue color on hover */
+}
+
+/* Sections */
+h2 {
+  font-size: 26px;
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+ul, ol {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+ul li, ol li {
+  margin-bottom: 10px;
+}
+
+/* Hero Section */
+.hero {
+  background: white;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+/* Hero Images Container */
+.hero-images {
+  display: flex;  /* Displays images in a horizontal row */
+  justify-content: space-around;  /* Spaces images evenly */
+  align-items: center;  /* Centers images vertically */
+  margin-top: 20px;  /* Adds space above the images */
+  flex-wrap: wrap;  /* Wraps on small screens */
+}
+
+/* Individual Hero Images */
+.hero-image {
+  max-width: 30%;  /* Each image takes ~1/3 of the width */
+  height: auto;  /* Keeps aspect ratio */
+  border-radius: 5px;  /* Optional rounded corners */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);  /* Optional shadow */
+  transition: transform 0.3s ease;  /* Enables smooth hover animation */
+  cursor: pointer;  /* Pointer cursor on hover */
+}
+
+.hero-image:hover {
+  transform: scale(1.1);  /* Enlarges by 10% on hover */
+}
+
+/* Footer */
+.site-footer {
+  background: #222;
+  color: #bbb;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 25px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .site-nav {
+    display: block;
+    float: none;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .hero-images {
+    flex-direction: column;  /* Stacks images vertically on mobile */
+  }
+  .hero-image {
+    max-width: 100%;  /* Full width on small screens */
+    margin-bottom: 15px;  /* Space between stacked images */
+
+'/'}
+}
